@@ -9,7 +9,7 @@ cd microservices-bam/03\ -\ docker\ versions/
 ## Step 2 - build and run the database
 ```
 cd database
-docker build -t bam-db:1.0 --build-arg DBPASSWORD=n3u3da! .
+docker build -t bam-db:1.0 --build-arg DBPASSWORD=pass123! .
 docker network create bam
 docker run -d --name bam-db --network bam bam-db:1.0
 ```
@@ -38,7 +38,7 @@ cd ..
 cd usermanager
 chmod a+x mvnw
 ./mvnw package
-docker build -t bam-user:1.0 --build-arg DBPASSWORD=n3u3da! .
+docker build -t bam-user:1.0 --build-arg DBPASSWORD=pass123! .
 docker run -d --name bam-user --network bam bam-user:1.0
 ```
 
@@ -48,7 +48,7 @@ cd ..
 cd buildingmanager
 chmod a+x mvnw
 ./mvnw package
-docker build -t bam-building:1.0 --build-arg DBPASSWORD=n3u3da! .
+docker build -t bam-building:1.0 --build-arg DBPASSWORD=pass123! .
 docker run -d --name bam-building --network bam bam-building:1.0
 ```
 
@@ -58,7 +58,7 @@ cd ..
 cd accesscontrol
 chmod a+x mvnw
 ./mvnw package
-docker build -t bam-access:1.0 --build-arg DBPASSWORD=n3u3da! .
+docker build -t bam-access:1.0 --build-arg DBPASSWORD=pass123! .
 docker run -d --name bam-access --network bam bam-access:1.0
 ```
 
